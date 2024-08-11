@@ -246,7 +246,14 @@ const handlePlantsClick = (e) => {
     e.preventDefault();
     setShowCart(false);
   };
-    return (
+
+  const plantsArrayCat1 = plantsArray[0].plants;
+  const plantsArrayCat2 = plantsArray[1].plants;
+  const plantsArrayCat3 = plantsArray[2].plants;
+  const plantsArrayCat4 = plantsArray[3].plants;
+  const plantsArrayCat5 = plantsArray[4].plants;
+  
+      return (
         <div>
              <div className="navbar" style={styleObj}>
             <div className="tag">
@@ -268,8 +275,15 @@ const handlePlantsClick = (e) => {
         </div>
         {!showCart? (
         <div className="product-grid">
-
-
+        {plantsArrayCat1.map((item, index) => (
+            <div className="product-card" key={index}>
+                <div className="product-title">{item.name}</div>
+                <div className="product-image">
+                    <img src={item.image} alt={item.name} />
+                </div>
+                <div className="product-price">{item.cost}</div>
+            </div>
+          ))}
         </div>
  ) :  (
     <CartItem onContinueShopping={handleContinueShopping}/>
