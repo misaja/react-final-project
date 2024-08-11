@@ -278,7 +278,7 @@ const handlePlantsClick = (e) => {
         {plantsArrayCat1.map((item, index) => (
             <div key={index}>
                 <div className="product-title">{item.name}</div>
-                <div className="product-image">
+                <div>
                     <img src={item.image} alt={item.name} />
                 </div>
                 <div className="product-price">{item.cost}</div>
